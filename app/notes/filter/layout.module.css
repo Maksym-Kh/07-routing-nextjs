@@ -1,0 +1,15 @@
+.filterContainer {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.sidebarWrapper {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.contentWrapper {
+    flex: 1;
+}

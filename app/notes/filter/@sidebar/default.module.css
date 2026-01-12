@@ -1,0 +1,25 @@
+.menuList {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    background-color: #f8f9fa;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+}
+
+.menuItem {
+    margin-bottom: 15px;
+}
+
+.menuLink {
+    text-decoration: none;
+    color: #333 !important;
+    font-weight: 500;
+    font-size: 18px;
+    display: block;
+    transition: color 0.2s;
+}
+
+.menuLink:hover {
+    color: #007bff !important;
+}

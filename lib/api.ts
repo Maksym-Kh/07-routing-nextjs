@@ -7,8 +7,10 @@ interface noteResponse {
 }
 
 interface noteParams {
-  pageNumber?: number;
+  page?: number;
   query?: string;
+  tag?: string;
+  perPage?: number;
 }
 
 axios.defaults.baseURL = "https://notehub-public.goit.study/api";
@@ -20,14 +22,17 @@ if (token) {
 }
 
 export const fetchNotes = async ({
-  pageNumber,
+  page,
   query,
+  tag,
+  perPage = 12,
 }: noteParams): Promise<noteResponse> => {
   const response = await axios.get<noteResponse>("/notes", {
     params: {
-      page: pageNumber,
+      page: page,
       search: query,
-      perPage: 12,
+      perPage: perPage,
+      tag: tag === "all" ? undefined : tag,
     },
   });
   return response.data;
