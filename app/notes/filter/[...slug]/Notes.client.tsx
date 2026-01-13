@@ -12,15 +12,16 @@ import { useDebounce } from "use-debounce";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import css from "./page.module.css";
 
-export default function NotesClient() {
-  const params = useParams();
+interface Props {
+  tagValue: string;
+}
+
+export default function NotesClient({ tagValue }: Props) {
   const [page, setPage] = useState(1);
   const limit = 12;
   const [search, setSearch] = useState("");
   const [debouncedSearch] = useDebounce(search, 300);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [tagValue] = params.slug as string[];
 
   useEffect(() => {
     setPage(1);
